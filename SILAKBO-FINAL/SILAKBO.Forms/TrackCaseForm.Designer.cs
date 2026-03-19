@@ -74,6 +74,7 @@
             Controls.Add(btnRefresh);
             Controls.Add(pictureBox1);
             Controls.Add(dgvReports);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TrackCaseForm";
             Text = "TrackCaseForm";
             ((System.ComponentModel.ISupportInitialize)dgvReports).EndInit();
