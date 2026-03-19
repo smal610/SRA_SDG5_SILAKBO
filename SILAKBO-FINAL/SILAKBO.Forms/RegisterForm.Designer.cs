@@ -62,7 +62,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(470, 211);
+            label1.Location = new Point(470, 192);
             label1.Name = "label1";
             label1.Size = new Size(60, 21);
             label1.TabIndex = 2;
@@ -73,7 +73,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.Location = new Point(470, 259);
+            label2.Location = new Point(470, 240);
             label2.Name = "label2";
             label2.Size = new Size(91, 21);
             label2.TabIndex = 3;
@@ -84,7 +84,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.Location = new Point(470, 307);
+            label3.Location = new Point(470, 288);
             label3.Name = "label3";
             label3.Size = new Size(86, 21);
             label3.TabIndex = 4;
@@ -95,7 +95,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.Location = new Point(470, 367);
+            label4.Location = new Point(470, 348);
             label4.Name = "label4";
             label4.Size = new Size(70, 21);
             label4.TabIndex = 5;
@@ -106,7 +106,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label5.Location = new Point(470, 416);
+            label5.Location = new Point(470, 397);
             label5.Name = "label5";
             label5.Size = new Size(79, 21);
             label5.TabIndex = 6;
@@ -115,7 +115,7 @@
             // txtName
             // 
             txtName.Font = new Font("Segoe UI", 12F);
-            txtName.Location = new Point(582, 203);
+            txtName.Location = new Point(582, 184);
             txtName.Name = "txtName";
             txtName.Size = new Size(343, 29);
             txtName.TabIndex = 7;
@@ -123,7 +123,7 @@
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 12F);
-            txtUsername.Location = new Point(582, 251);
+            txtUsername.Location = new Point(582, 232);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(343, 29);
             txtUsername.TabIndex = 8;
@@ -131,7 +131,7 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F);
-            txtPassword.Location = new Point(582, 299);
+            txtPassword.Location = new Point(582, 280);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(343, 29);
             txtPassword.TabIndex = 9;
@@ -141,7 +141,7 @@
             comboGender.Font = new Font("Segoe UI", 12F);
             comboGender.FormattingEnabled = true;
             comboGender.Items.AddRange(new object[] { "Female" });
-            comboGender.Location = new Point(582, 359);
+            comboGender.Location = new Point(582, 340);
             comboGender.Name = "comboGender";
             comboGender.Size = new Size(343, 29);
             comboGender.TabIndex = 10;
@@ -149,7 +149,7 @@
             // dtpBirthday
             // 
             dtpBirthday.Font = new Font("Segoe UI", 12F);
-            dtpBirthday.Location = new Point(582, 408);
+            dtpBirthday.Location = new Point(582, 389);
             dtpBirthday.Name = "dtpBirthday";
             dtpBirthday.Size = new Size(343, 29);
             dtpBirthday.TabIndex = 11;
@@ -159,9 +159,9 @@
             btnRegister.BackColor = Color.Indigo;
             btnRegister.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnRegister.ForeColor = Color.White;
-            btnRegister.Location = new Point(707, 488);
+            btnRegister.Location = new Point(470, 438);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(218, 49);
+            btnRegister.Size = new Size(455, 49);
             btnRegister.TabIndex = 13;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;
@@ -172,9 +172,9 @@
             btnLogin.BackColor = Color.PaleVioletRed;
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(470, 488);
+            btnLogin.Location = new Point(470, 521);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(218, 49);
+            btnLogin.Size = new Size(455, 49);
             btnLogin.TabIndex = 12;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -185,7 +185,7 @@
             chkShowPassword.AutoSize = true;
             chkShowPassword.BackColor = Color.Transparent;
             chkShowPassword.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkShowPassword.Location = new Point(817, 334);
+            chkShowPassword.Location = new Point(817, 315);
             chkShowPassword.Name = "chkShowPassword";
             chkShowPassword.Size = new Size(108, 19);
             chkShowPassword.TabIndex = 14;
@@ -198,7 +198,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(470, 470);
+            label6.Location = new Point(470, 503);
             label6.Name = "label6";
             label6.Size = new Size(142, 15);
             label6.TabIndex = 15;

@@ -65,7 +65,7 @@
             dgvReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvReports.Location = new Point(12, 128);
             dgvReports.Name = "dgvReports";
-            dgvReports.Size = new Size(940, 439);
+            dgvReports.Size = new Size(940, 188);
             dgvReports.TabIndex = 3;
             dgvReports.SelectionChanged += dgvReports_SelectionChanged;
             // 

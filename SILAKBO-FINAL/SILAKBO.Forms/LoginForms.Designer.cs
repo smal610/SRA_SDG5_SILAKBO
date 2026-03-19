@@ -108,9 +108,9 @@
             btnLogin.BackColor = Color.Indigo;
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(697, 416);
+            btnLogin.Location = new Point(460, 399);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(218, 49);
+            btnLogin.Size = new Size(455, 49);
             btnLogin.TabIndex = 7;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -121,7 +121,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(460, 398);
+            label3.Location = new Point(460, 474);
             label3.Name = "label3";
             label3.Size = new Size(131, 15);
             label3.TabIndex = 8;
@@ -132,9 +132,9 @@
             btnRegister.BackColor = Color.PaleVioletRed;
             btnRegister.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnRegister.ForeColor = Color.White;
-            btnRegister.Location = new Point(460, 416);
+            btnRegister.Location = new Point(460, 492);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(218, 49);
+            btnRegister.Size = new Size(455, 49);
             btnRegister.TabIndex = 9;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;
