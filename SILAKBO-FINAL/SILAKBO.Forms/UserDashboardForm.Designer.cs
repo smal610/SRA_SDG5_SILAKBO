@@ -53,10 +53,10 @@
             // 
             lblWelcome.AutoSize = true;
             lblWelcome.BackColor = Color.Transparent;
-            lblWelcome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblWelcome.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWelcome.Location = new Point(12, 76);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(74, 21);
+            lblWelcome.Size = new Size(82, 21);
             lblWelcome.TabIndex = 1;
             lblWelcome.Text = "Welcome";
             // 
