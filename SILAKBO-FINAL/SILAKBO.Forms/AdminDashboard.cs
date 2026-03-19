@@ -1,9 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-using SILAKBO_FINAL.SILAKBO.DAL;
-using SILAKBO_FINAL.SILAKBO.Models;
-
-namespace SILAKBO_FINAL.SILAKBO.Forms
+﻿namespace SILAKBO_FINAL.SILAKBO.Forms
 {
     public partial class AdminDashboard : Form
     {
