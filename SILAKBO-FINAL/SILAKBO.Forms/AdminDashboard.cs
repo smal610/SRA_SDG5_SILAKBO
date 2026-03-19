@@ -1,4 +1,10 @@
 ﻿using SILAKBO_FINAL.SILAKBO.Models;
+using SILAKBO_FINAL.SILAKBO.Utils;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Text.Json;
+using System.IO;
 
 namespace SILAKBO_FINAL.SILAKBO.Forms
 {
@@ -15,27 +21,42 @@ namespace SILAKBO_FINAL.SILAKBO.Forms
             // Optionally, fill ComboBox items
             comboStatus.Items.AddRange(new string[] { "Pending", "Ongoing", "Completed" });
             comboStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            LoadAllReports(); // auto-load when form opens
+            //LoadAllReportsAsync(); // auto-load when form opens
+            _ = LoadAllReportsAsync(); // async call
         }
 
-        // 🔹 Load all reports into DataGridView
-        private void LoadAllReports()
+        // Load all reports into DataGridView
+        //private void LoadAllReports()
+        //{
+        //    try
+        //    {
+        //        dgvReports.DataSource = reportRepo.GetReportsByUser(0);
+        //        // 0 = get ALL reports (as we defined earlier)
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error loading reports: " + ex.Message);
+        //    }
+        //}
+
+        private async Task LoadAllReportsAsync()
         {
             try
             {
-                dgvReports.DataSource = reportRepo.GetReportsByUser(0);
-                // 0 = get ALL reports (as we defined earlier)
+                dgvReports.DataSource = await Task.Run(() => reportRepo.GetReportsByUser(0));
+                LoadReportChart(); // load chart after data
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading reports: " + ex.Message);
+                Logger.Log(ex);
+                MessageBox.Show("Something went wrong. Check log.txt");
             }
         }
 
-        // 🔹 Refresh Button
+        //Refresh Button
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadAllReports();
+            LoadAllReportsAsync();
         }
 
         private void btnUpdateStatus_Click(object sender, EventArgs e)
@@ -59,7 +80,7 @@ namespace SILAKBO_FINAL.SILAKBO.Forms
             {
                 reportRepo.UpdateReportStatus(reportID, newStatus);
                 MessageBox.Show("Case status updated successfully!");
-                LoadAllReports(); // Refresh DataGridView
+                LoadAllReportsAsync(); // Refresh DataGridView
             }
             catch (Exception ex)
             {
@@ -76,6 +97,37 @@ namespace SILAKBO_FINAL.SILAKBO.Forms
             }
         }
 
+        private void LoadReportChart()
+        {
+            try
+            {
+                var reports = reportRepo.GetReportsByUser(0); // 0 = all reports
+                var statusCounts = reports.GroupBy(r => r.Status)
+                                          .Select(g => new { Status = g.Key, Count = g.Count() })
+                                          .ToList();
+
+                chartReports.Series.Clear();
+                Series series = new Series("Reports");
+                series.ChartType = SeriesChartType.Column;
+
+                foreach (var s in statusCounts)
+                {
+                    series.Points.AddXY(s.Status, s.Count);
+                }
+
+                chartReports.Series.Add(series);
+                chartReports.ChartAreas[0].AxisX.Title = "Status";
+                chartReports.ChartAreas[0].AxisY.Title = "Number of Reports";
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex);
+                MessageBox.Show("Error loading chart. Check log.txt for details.");
+            }
+        }
+
+
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -91,6 +143,28 @@ namespace SILAKBO_FINAL.SILAKBO.Forms
                 LoginForms login = new LoginForms();
                 login.Show();
                 this.Close();
+            }
+        }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var reports = reportRepo.GetReportsByUser(0);
+
+                string json = JsonSerializer.Serialize(reports, new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
+
+                File.WriteAllText("ReportsBackup.json", json);
+
+                MessageBox.Show("Backup saved successfully!");
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex);
+                MessageBox.Show("Error saving backup.");
             }
         }
     }

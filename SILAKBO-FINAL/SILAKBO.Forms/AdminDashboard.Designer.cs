@@ -29,14 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             pictureBox1 = new PictureBox();
             btnRefresh = new Button();
             dgvReports = new DataGridView();
             btnUpdateStatus = new Button();
             comboStatus = new ComboBox();
             btnLogout = new Button();
+            chartReports = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            btnBackup = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvReports).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartReports).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -65,7 +71,7 @@
             dgvReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvReports.Location = new Point(12, 128);
             dgvReports.Name = "dgvReports";
-            dgvReports.Size = new Size(940, 188);
+            dgvReports.Size = new Size(940, 228);
             dgvReports.TabIndex = 3;
             dgvReports.SelectionChanged += dgvReports_SelectionChanged;
             // 
@@ -97,11 +103,39 @@
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
             // 
+            // chartReports
+            // 
+            chartArea1.Name = "ChartArea1";
+            chartReports.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartReports.Legends.Add(legend1);
+            chartReports.Location = new Point(12, 362);
+            chartReports.Name = "chartReports";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartReports.Series.Add(series1);
+            chartReports.Size = new Size(940, 217);
+            chartReports.TabIndex = 9;
+            chartReports.Text = "chart1";
+            // 
+            // btnBackup
+            // 
+            btnBackup.Location = new Point(410, 98);
+            btnBackup.Name = "btnBackup";
+            btnBackup.Size = new Size(109, 23);
+            btnBackup.TabIndex = 10;
+            btnBackup.Text = "Backup Reports";
+            btnBackup.UseVisualStyleBackColor = true;
+            btnBackup.Click += btnBackup_Click;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(964, 591);
+            Controls.Add(btnBackup);
+            Controls.Add(chartReports);
             Controls.Add(btnLogout);
             Controls.Add(comboStatus);
             Controls.Add(btnUpdateStatus);
@@ -114,6 +148,7 @@
             Text = "AdminDashboard";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvReports).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartReports).EndInit();
             ResumeLayout(false);
         }
 
@@ -125,5 +160,7 @@
         private Button btnUpdateStatus;
         private ComboBox comboStatus;
         private Button btnLogout;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartReports;
+        private Button btnBackup;
     }
 }
