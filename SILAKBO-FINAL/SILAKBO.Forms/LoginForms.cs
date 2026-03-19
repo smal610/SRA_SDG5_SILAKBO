@@ -32,16 +32,27 @@ namespace SILAKBO_FINAL.SILAKBO.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var user = authService.Login(txtUsername.Text.Trim(), txtPassword.Text.Trim());
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            User user = authService.Login(username, password);
+
             if (user != null)
             {
-                this.Hide();
-                if (user.Role == "Admin") new AdminDashboardForm(user).Show();
-                else new UserDashboardForm(user).Show();
+                if (user.Role == "Admin")
+                {
+                    new AdminDashboard().Show();  // Open admin dashboard
+                    this.Hide();
+                }
+                else
+                {
+                    new UserDashboardForm(user).Show(); // Open user/victim dashboard
+                    this.Hide();
+                }
             }
             else
             {
-                MessageBox.Show("Invalid username or password.");
+                MessageBox.Show("Invalid username or password");
             }
         }
 
@@ -59,18 +70,4 @@ namespace SILAKBO_FINAL.SILAKBO.Forms
         }
     }
 
-    internal class AdminDashboardForm
-    {
-        private User user;
-
-        public AdminDashboardForm(User user)
-        {
-            this.user = user;
-        }
-
-        internal void Show()
-        {
-            throw new NotImplementedException();
-        }
-    }
 }

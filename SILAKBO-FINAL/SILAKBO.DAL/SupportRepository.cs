@@ -13,7 +13,7 @@ public class SupportRepository
         using (var conn = DBConnection.GetConnection())
         {
             conn.Open();
-            string sql = "SELECT * FROM SupportContacts";
+            string sql = "SELECT * FROM SupportResources";
             using (var cmd = new MySqlCommand(sql, conn))
             {
                 using (var reader = cmd.ExecuteReader())
