@@ -10,7 +10,7 @@ namespace SILAKBO_FINAL.SILAKBO.Forms
 {
     public partial class MyProfileForm : Form
     {
-        public MyProfileForm()
+        public MyProfileForm(Models.User user)
         {
             InitializeComponent();
         }

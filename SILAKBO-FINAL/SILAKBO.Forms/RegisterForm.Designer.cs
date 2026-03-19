@@ -35,11 +35,11 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            txtName = new TextBox();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
+            comboGender = new ComboBox();
+            dtpBirthday = new DateTimePicker();
             btnRegister = new Button();
             btnLogin = new Button();
             chkShowPassword = new CheckBox();
@@ -112,47 +112,47 @@
             label5.TabIndex = 6;
             label5.Text = "Birthday:";
             // 
-            // textBox1
+            // txtName
             // 
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(582, 203);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(343, 29);
-            textBox1.TabIndex = 7;
+            txtName.Font = new Font("Segoe UI", 12F);
+            txtName.Location = new Point(582, 203);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(343, 29);
+            txtName.TabIndex = 7;
             // 
-            // textBox2
+            // txtUsername
             // 
-            textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.Location = new Point(582, 251);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(343, 29);
-            textBox2.TabIndex = 8;
+            txtUsername.Font = new Font("Segoe UI", 12F);
+            txtUsername.Location = new Point(582, 251);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(343, 29);
+            txtUsername.TabIndex = 8;
             // 
-            // textBox3
+            // txtPassword
             // 
-            textBox3.Font = new Font("Segoe UI", 12F);
-            textBox3.Location = new Point(582, 299);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(343, 29);
-            textBox3.TabIndex = 9;
+            txtPassword.Font = new Font("Segoe UI", 12F);
+            txtPassword.Location = new Point(582, 299);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(343, 29);
+            txtPassword.TabIndex = 9;
             // 
-            // comboBox1
+            // comboGender
             // 
-            comboBox1.Font = new Font("Segoe UI", 12F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Female" });
-            comboBox1.Location = new Point(582, 359);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(343, 29);
-            comboBox1.TabIndex = 10;
+            comboGender.Font = new Font("Segoe UI", 12F);
+            comboGender.FormattingEnabled = true;
+            comboGender.Items.AddRange(new object[] { "Female" });
+            comboGender.Location = new Point(582, 359);
+            comboGender.Name = "comboGender";
+            comboGender.Size = new Size(343, 29);
+            comboGender.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // dtpBirthday
             // 
-            dateTimePicker1.Font = new Font("Segoe UI", 12F);
-            dateTimePicker1.Location = new Point(582, 408);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(343, 29);
-            dateTimePicker1.TabIndex = 11;
+            dtpBirthday.Font = new Font("Segoe UI", 12F);
+            dtpBirthday.Location = new Point(582, 408);
+            dtpBirthday.Name = "dtpBirthday";
+            dtpBirthday.Size = new Size(343, 29);
+            dtpBirthday.TabIndex = 11;
             // 
             // btnRegister
             // 
@@ -212,11 +212,11 @@
             Controls.Add(chkShowPassword);
             Controls.Add(btnRegister);
             Controls.Add(btnLogin);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(dtpBirthday);
+            Controls.Add(comboGender);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
+            Controls.Add(txtName);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -238,11 +238,11 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker1;
+        private TextBox txtName;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
+        private ComboBox comboGender;
+        private DateTimePicker dtpBirthday;
         private Button btnRegister;
         private Button btnLogin;
         private CheckBox chkShowPassword;

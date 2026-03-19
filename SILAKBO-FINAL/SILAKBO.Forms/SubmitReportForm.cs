@@ -10,7 +10,7 @@ namespace SILAKBO_FINAL.SILAKBO.Forms
 {
     public partial class SubmitReportForm : Form
     {
-        public SubmitReportForm()
+        public SubmitReportForm(Models.User user)
         {
             InitializeComponent();
         }

@@ -10,7 +10,7 @@ namespace SILAKBO_FINAL.SILAKBO.Forms
 {
     public partial class TrackCaseForm : Form
     {
-        public TrackCaseForm()
+        public TrackCaseForm(Models.User user)
         {
             InitializeComponent();
         }
